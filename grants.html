@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>grants.knit</title>
+
+<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-6.5.2/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Stocnet</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="packages.html">Packages</a>
+</li>
+<li>
+  <a href="workshops.html">Workshops</a>
+</li>
+<li>
+  <a href="publications.html">Publications</a>
+</li>
+<li>
+  <a href="grants.html">Grants</a>
+</li>
+<li>
+  <a href="contributors.html">Contributors</a>
+</li>
+<li>
+  <a href="contact.html">Contact</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://github.com/stocnet">
+    <span class="fab fa-github"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+
+</div>
+
+
+<p><br><br><br></p>
+<p>Here are selected grants related to the Stocnet suite and its
+packages.</p>
+<p><br></p>
+
+<style>
+  .grants-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
+  .grant-card { display: flex; gap: 16px; background: #fff; border-radius: 8px; padding: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); align-items: flex-start; }
+  .grant-logo { flex: 0 0 90px; height: 90px; border: 1px solid #eee; border-radius: 6px; background: #fafafa; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .grant-logo img { width: 100%; height: 100%; object-fit: contain; }
+  .grant-body { flex: 1 1 auto; min-width: 0; }
+  .grant-title { font-size: 1.05em; font-weight: 600; color: #215CAF; margin: 0 0 6px 0; }
+  .grant-meta, .grant-notes { margin: 4px 0; }
+  .grant-links a { color: #215CAF; }
+</style>
+
+<div class="grants-grid">
+  
+  <div class="grant-card">
+    <div class="grant-logo">
+      <img src="img/snf.png" alt="Grant logo placeholder">
+    </div>
+    <div class="grant-body">
+      <div class="grant-title">2025-2028 · The Feminisation of Global Migration</div>
+      <div class="grant-meta">Awarded to <em>Per Block</em>. Grant No. 10004034, funded by the <em>Swiss National Science Foundation</em>. <a href="https://data.snf.ch/grants/grant/10004034">Link</a></div>
+    </div>
+  </div>
+  
+  <div class="grant-card">
+    <div class="grant-logo">
+      <img src="img/anr.png" alt="Grant logo placeholder">
+    </div>
+    <div class="grant-body">
+      <div class="grant-title">2024-2030 · Analyse quantitative des interactions sociales</div>
+      <div class="grant-meta">Junior professor chair awarded to <em>Marion Hoffman</em>. Funded by the <em>Agence nationale de la recherche</em>.</div>
+    </div>
+  </div>
+  
+  <div class="grant-card">
+    <div class="grant-logo">
+      <img src="img/snf.png" alt="Grant logo placeholder">
+    </div>
+    <div class="grant-body">
+      <div class="grant-title">2022-2027 · Labour Markets as Emergent Mobility Networks</div>
+      <div class="grant-meta">Awarded to <em>Per Block</em>. Grant No. 202754, funded by the <em>Swiss National Science Foundation</em>. <a href="https://data.snf.ch/grants/grant/202754">Link</a></div>
+    </div>
+  </div>
+  
+    <div class="grant-card">
+    <div class="grant-logo">
+      <img src="img/nsf.png" alt="Grant logo placeholder">
+    </div>
+    <div class="grant-body">
+      <div class="grant-title">2020-2025 · Statistical Models for Three-Way Social Network Dynamics</div>
+      <div class="grant-meta">Awarded to <em>Nynke Niezink</em>. Grant No. SES-2020276, <em>National Science Foundation</em> Regular Research Grant in the Methodology, Measurement, and Statistics (MMS) Program. <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2020276">Link</a></div>
+    </div>
+  </div>
+  
+  <div class="grant-card">
+    <div class="grant-logo">
+      <img src="img/snf.png" alt="Grant logo placeholder">
+    </div>
+    <div class="grant-body">
+      <div class="grant-title">2020-2025 · PANARCHIC: Power and Networks and the Rate of Change of Institutional Complexes</div>
+      <div class="grant-meta">Awarded to <em>James Hollway</em>. Grant No. 188976, funded by the <em>Swiss National Science Foundation</em>. <a href="https://data.snf.ch/grants/grant/188976">Link</a></div>
+    </div>
+  </div>
+  
+  <div class="grant-card">
+    <div class="grant-logo">
+      <img src="img/nwo.jpg" alt="Grant logo placeholder">
+    </div>
+    <div class="grant-body">
+      <div class="grant-title">2013-2018 · Co-Evolution of Networks and Real-Valued Actor Attributes</div>
+      <div class="grant-meta">PhD project carried out by <em>Nynke Niezink</em>, awarded to <em>Marijtje van Duijn</em>. Grant No. 406-12-165, funded by the <em>Nederlandse Organisatie voor Wetenschappelijk Onderzoek</em>. <a href="https://www.nwo.nl/en/projects/406-12-165-0">Link</a></div>
+    </div>
+  </div>
+  
+  <div class="grant-card">
+    <div class="grant-logo">
+      <img src="img/esf.png" alt="Grant logo placeholder">
+    </div>
+    <div class="grant-body">
+      <div class="grant-title">2006–2011 · Models for the evolution of networks and behavior</div>
+      <div class="grant-meta">Postdoc project carried out by C. Steglich, awarded to <em>Tom Snijders</em>.</div>
+      <div class="grant-meta">Part of "Dynamics of actors and networks across levels: individuals, groups, organizations, and social settings" (No. 461-05-690), funded by the <em>ESF ECRP EUROCORES programme: European Collaborative Research</em>. <a href="https://www.nwo.nl/en/projects/461-05-690">Link</a></div>
+    </div>
+  </div>
+  
+  <div class="grant-card">
+    <div class="grant-logo">
+      <img src="img/nih.png" alt="Grant logo placeholder">
+    </div>
+    <div class="grant-body">
+      <div class="grant-title">2008-2009 · Adolescent Peer Social Network Dynamics and Problem Behavior</div>
+      <div class="grant-meta">Awarded to <em>John M. Light</em> and <em>Mark Huisman</em>. Grant No. 1R01HD052887-01A2, funded by the <em>National Institutes of Health</em>. <a href="https://reporter.nih.gov/search/w1zhpTrRCEmszzOM0vHFRA/project-details/7467517">Link</a></div>
+    </div>
+  </div>
+
+  <div class="grant-card">
+    <div class="grant-logo">
+      <img src="img/nwo.jpg" alt="Grant logo placeholder">
+    </div>
+    <div class="grant-body">
+      <div class="grant-title">2002–2008 · The dynamics of networks and behavior</div>
+      <div class="grant-meta">Awarded to <em>Tom Snijders</em>. Grant No. 401-01-550-prog, funded by the <em>Nederlandse Organisatie voor Wetenschappelijk Onderzoek</em>. <a href="https://www.nwo.nl/en/projects/401-01-550-prog">Link</a></div>
+      <div class="grant-notes">Includes projects: </div>
+      <div class="grant-notes">Postdoc project "Modeling the evolution of networks and behavior" carried out by C. Steglich. <a href="https://www.nwo.nl/en/projects/401-01-551">Link</a></div>
+      <div class="grant-notes">PhD project "Statistical methods for studying the evolution of networks and behavior" carried out by M. Schweinberger. <a href="https://www.nwo.nl/en/projects/401-01-552">Link</a></div>
+    </div>
+  </div>
+
+  <div class="grant-card">
+    <div class="grant-logo">
+      <img src="img/nwo.jpg" alt="Grant logo placeholder">
+    </div>
+    <div class="grant-body">
+      <div class="grant-title">2000 · An Open Software System for the Statistical Analysis of Social Networks</div>
+      <div class="grant-meta">Awarded to <em>Tom Snijders</em>. Grant No. 405-20-20, funded by the <em>Nederlandse Organisatie voor Wetenschappelijk Onderzoek</em>.</div>
+    </div>
+  </div>
+
+  <div class="grant-card">
+    <div class="grant-logo">
+      <img src="img/nwo.jpg" alt="Grant logo placeholder">
+    </div>
+    <div class="grant-body">
+      <div class="grant-title">1998 · Statistical methods for the joint development of individual behavior and peer networks</div>
+      <div class="grant-meta">Awarded to <em>Tom Snijders</em> and <em>Mark Huisman</em>. Grant No. 575-28-012, funded by the <em>Nederlandse Organisatie voor Wetenschappelijk Onderzoek</em>.</div>
+    </div>
+  </div>
+
+
+
+<div id="section" class="section level2">
+<h2></h2>
+<p><br><br></p>
+<div class="logo-bottom-bg">
+<p><img src="img/logo-bottom.png" alt="logo"></p>
+</div>
+<script>
+$(function() {
+    // put the stocnet logo on the left of the nav bar
+    $('.navbar-brand').html('<img src="img/logo-name-white.png" alt="stocnet logo" style="height: 45px; margin-right: 10px;margin-top: -10px">');
+    });
+</script>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

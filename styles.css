@@ -1,0 +1,222 @@
+img.content.x700 {
+  width: auto !important; /*override the width below*/
+  width: 100%;
+  min-width: 400px;
+  float: left;
+  clear: both;
+}
+
+/*----------------Whole document:----------------*/
+body{
+  /*font-family: Helvetica; */
+  font-size: 11pt;
+}
+
+
+/*----------------NAVBAR ---------------*/
+.navbar-default {
+    background-color: #215CAF;
+    border: 0px;
+    height: 50px;
+}
+
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.open>a,
+a.dropdown-toggle:hover {
+  background-color: #215CAF !important;
+  color: #EDEDF4 !important;
+}
+
+/* Add a thin light blue line below the active tab */
+.navbar-default .navbar-nav>.active>a {
+  border-bottom: 3px solid #EDEDF4 !important; /* Thin light blue line */
+  box-sizing: border-box;
+  padding-bottom: 0;
+}
+
+/*center vertically the text in the nav bar */
+.navbar-default .navbar-nav>li>a {
+    height: 50px;
+    line-height: 50px;
+    padding-top: 0;
+    padding-bottom: 0;
+    box-sizing: border-box;
+}
+
+/* Dropdown menu color */
+.navbar-default .dropdown-menu {
+  background-color: #215CAF;
+}
+
+/* Dropdown menu hover color */
+  .navbar-default .dropdown-menu>li>a:hover {
+}
+
+/* Publications page bottom logo background */
+.logo-bottom-bg {
+  position: fixed;
+  right: 40px;
+  bottom: -50px;
+  width: 250px;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 1;
+}
+.logo-bottom-bg img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Contributors grid layout */
+
+.bottom-vertical-line {
+  width: 100;
+  height: 3px;
+  background: #215CAF;
+  display: block;
+  margin: 0px auto 0 auto;
+}
+
+
+
+.contributors-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+.contributor-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  padding: 24px 16px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 220px;
+  max-width: 220px;
+  min-width: 220px;
+  flex: 0 0 220px;
+}
+
+.contributor-card img {
+  border-radius: 0;
+  object-fit: contain;
+  width: auto;
+  height: 60px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+.contributor-card a {
+  margin-top: 0.5em;
+  color: #215CAF;
+  font-size: 0.95em;
+}
+
+/* --- Custom block with cut top-left corner --- */
+.fancy-block {
+  position: relative;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.fancy-block::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 80px;
+  height: 48px;
+  background: white;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  z-index: 2;
+}
+
+    background-color: #215CAF;
+  }
+
+/* Navbar Links when hovered*/
+.navbar-default .dropdown-menu>.active>a
+.navbar-default .navbar-nav>.active>a:hover, 
+.navbar-default .navbar-nav:hover, 
+.navbar-default .navbar-nav>li>a:hover, 
+a.navbar-brand:hover {
+  color: #ffffffab !important;
+  background-color: #215CAF;
+}
+
+/* ---------------- GRID stuff ----------------- */
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 auto;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.grid-item {
+    position: relative;
+    width: 220px;
+    max-width: 220px;
+    min-width: 220px;
+    background-color: #fafafa;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid #3a3b3c;
+    border-radius: 5px;
+    text-align: left;
+    font-size: 1em;
+    padding: 10px 10px 0px 10px;
+    margin: 1%;
+    word-wrap: break-word;
+}
+
+/* Workshop tile style for index page */
+.workshop-tile {
+    background: #EDEDF4;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto 2em auto;
+    padding: 24px 30px 18px 30px;
+    font-size: 1.06em;
+    text-align: left;
+    display: block;
+}
+
+.grid-item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.1); /* Adjust the opacity here (0.7 for 70% opacity) */
+    border-radius: 5px;
+    z-index: -1; /* Place the pseudo-element behind the content */
+}
+
+.more{
+  display: none;
+}
+
+h2{color:#215CAF}
+
+
+h-theme {
+    font-style: normal;
+    font-size: 150%;
+}
+
+details summary::-webkit-details-marker {
+  display:none;
+}

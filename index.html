@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>index.knit</title>
+
+<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-6.5.2/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Stocnet</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="packages.html">Packages</a>
+</li>
+<li>
+  <a href="workshops.html">Workshops</a>
+</li>
+<li>
+  <a href="publications.html">Publications</a>
+</li>
+<li>
+  <a href="grants.html">Grants</a>
+</li>
+<li>
+  <a href="contributors.html">Contributors</a>
+</li>
+<li>
+  <a href="contact.html">Contact</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://github.com/stocnet">
+    <span class="fab fa-github"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+
+</div>
+
+
+<p><br></p>
+
+<div class="home-hero" style="display:flex; gap:24px; align-items:flex-start; margin: 10px 0 10px 0;">
+  <img src="img/logo2.png" alt="logo" style="height:200px; border: 8px solid #fff; flex:0 0 auto;">
+  <div style="flex:1 1 auto; min-width:0;">
+    <p style="font-size:1.7em; margin-bottom:0.5em;"><span style="color:#215CAF;font-weight:bold;">Stoc</span><span style="color:black;">hastic </span><span style="color:#215CAF;font-weight:bold;">net</span><span style="color:black;">works software suite</span></p>
+    <p style="font-size:1em">Stocnet is an open software system for the advanced statistical analysis of social networks. Its history reaches back to <a href="https://stocnet.gmw.rug.nl/content/project.htm">1998</a>, but its new guise as a GitHub organization started in 2024. It currently includes the software packages: <span style="color:#215CAF;">RSiena</span> (for longitudinal network models), <span style="color:#215CAF;">migraph</span> (for cross-sectional network analysis), <span style="color:#215CAF;">goldfish</span> (for relational event models), <span style="color:#215CAF;">MoNAn</span> (for mobility network analysis), <span style="color:#215CAF;">ERPM</span> (for partition models), <span style="color:#215CAF;">manynet</span> (for handling network data), and <span style="color:#215CAF;">autograph</span> (for network visualization).</p>
+  </div>
+</div>
+
+<p><br><br></p>
+<p>
+Here, you can learn more about:
+</p>
+<ul>
+<li><p><a href="packages.html">Packages</a> - descriptions of the
+packages with links to the GitHub repositories and CRAN pages</p></li>
+<li><p><a href="workshops.html">Workshops</a> - list of both past and
+future workshops</p></li>
+<li><p><a href="publications.html">Publications</a> - relevant
+methodological references</p></li>
+<li><p><a href="grants.html">Grant</a> - information on grants
+supporting the development of the Stocnet packages</p></li>
+<li><p><a href="contributors.html">Contributors</a> - details on the
+development team and other contributors</p></li>
+<li><p><a href="contact.html">Contact</a> - information to get in touch
+when you need help or want to contribute</p></li>
+</ul>
+<p><br></p>
+<p style="font-size:1.5em">
+Upcoming workshops
+</p>
+
+<div class="workshop-tile">
+  We regularly organize workshops on the use of the Stocnet packages, both at conferences and as summer schools. 
+  We plan to offer workshop at the 8th European Conference for Social Networks held at Linköping University on August 11th to 15th, 2026. <a href="https://liu.se/en/event/eusn-2026">Stay udpated!</a><br> 
+</div>
+
+<p style="font-size:1.5em">
+Supporting institutions
+</p>
+
+<div class="contributors-grid">
+
+  <div class="contributor-card">
+    <img src="img/cmu.png" alt="logo" style="height:60px; margin-bottom:10px;" />
+    <div style="font-weight:bold; margin-bottom:4px; font-size:1.1em;">Carnegie Mellon University</div>
+    <div style="font-size:0.95em; color:#555;"></div>
+  </div>
+  
+  <div class="contributor-card">
+    <img src="img/eth.jpeg" alt="logo" style="height:60px; margin-bottom:10px;" />
+    <div style="font-weight:bold; margin-bottom:4px; font-size:1.1em;">ETH Zürich</div>
+    <div style="font-size:0.95em; color:#555;"></div>
+  </div>
+
+  <div class="contributor-card">
+    <img src="img/geneva.png" alt="logo" style="height:60px; margin-bottom:10px;" />
+    <div style="font-weight:bold; margin-bottom:4px; font-size:1.1em;">Geneva Graduate Institute</div>
+    <div style="font-size:0.95em; color:#555;"></div>
+  </div>
+  
+  <div class="contributor-card">
+    <img src="img/iast.png" alt="logo" style="height:60px; margin-bottom:10px;" />
+    <div style="font-weight:bold; margin-bottom:4px; font-size:1.1em;">Institute for Advanced Study in Toulouse</div>
+    <div style="font-size:0.95em; color:#555;"></div>
+  </div>
+  
+  <div class="contributor-card">
+    <img src="img/tse.png" alt="logo" style="height:60px; margin-bottom:10px;" />
+    <div style="font-weight:bold; margin-bottom:4px; font-size:1.1em;">Toulouse School of Economics</div>
+    <div style="font-size:0.95em; color:#555;"></div>
+  </div>
+  
+  <div class="contributor-card">
+    <img src="img/groningen.png" alt="logo" style="height:60px; margin-bottom:10px;" />
+    <div style="font-weight:bold; margin-bottom:4px; font-size:1.1em;">University of Groningen</div>
+    <div style="font-size:0.95em; color:#555;"></div>
+  </div>
+  
+  <div class="contributor-card">
+    <img src="img/kentucky.png" alt="logo" style="height:60px; margin-bottom:10px;" />
+    <div style="font-weight:bold; margin-bottom:4px; font-size:1.1em;">University of Kentucky</div>
+    <div style="font-size:0.95em; color:#555;"></div>
+  </div>
+  
+  <div class="contributor-card">
+    <img src="img/oxford.png" alt="logo" style="height:60px; margin-bottom:10px;" />
+    <div style="font-weight:bold; margin-bottom:4px; font-size:1.1em;">University of Oxford</div>
+    <div style="font-size:0.95em; color:#555;"></div>
+  </div>
+  
+  <div class="contributor-card">
+    <img src="img/stockholm.png" alt="logo" style="height:60px; margin-bottom:10px;" />
+    <div style="font-weight:bold; margin-bottom:4px; font-size:1.1em;">University of Stockholm</div>
+    <div style="font-size:0.95em; color:#555;"></div>
+  </div>
+  
+  <div class="contributor-card">
+    <img src="img/uzh.png" alt="logo" style="height:60px; margin-bottom:10px;" />
+    <div style="font-weight:bold; margin-bottom:4px; font-size:1.1em;">University of Zurich</div>
+    <div style="font-size:0.95em; color:#555;"></div>
+  </div>
+  
+</div>
+
+<p><br><br><br></p>
+<div style="text-align: left">
+<font size="2"> Website maintained by Marion Hoffman, last updated on
+30/10/2025. </font>
+</div>
+</div>
+<script>
+$(function() {
+    // put the stocnet logo on the left of the nav bar
+    $('.navbar-brand').html('<img src="img/logo-name-white.png" alt="stocnet logo" style="height: 45px; margin-right: 10px;margin-top: -10px">');
+    });
+</script>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>workshops.knit</title>
+
+<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-6.5.2/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Stocnet</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="packages.html">Packages</a>
+</li>
+<li>
+  <a href="workshops.html">Workshops</a>
+</li>
+<li>
+  <a href="publications.html">Publications</a>
+</li>
+<li>
+  <a href="grants.html">Grants</a>
+</li>
+<li>
+  <a href="contributors.html">Contributors</a>
+</li>
+<li>
+  <a href="contact.html">Contact</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://github.com/stocnet">
+    <span class="fab fa-github"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+
+</div>
+
+
+<p><br><br><br></p>
+<p style="font-size:1.5em">
+Workshops
+</p>
+<p>The Stocnet team offers multiple workshops in social network analysis
+with R. Many of these workshops are taught at least once a year at
+conferences affiliated with the <a
+href="https://www.insna.org/">INSNA</a>, including the Sunbelt
+conference and the European Conference of Social Networks (EUSN).</p>
+<p>Finally, we regularly offer summer and winter schools. Please check
+this website periodically for announcements about upcoming teaching
+events. Information will also be shared on the <a
+href="https://www.insna.org/socnet">SOCNET mailing list</a> and the <a
+href="https://groups.io/g/RSiena">RSiena group</a>.</p>
+<p>Below, you can find the list of workshops we developed for the
+various Stocnet R packages and to teach social network analysis in
+general.</p>
+<div id="section" class="section level2 tabset">
+<h2 class="tabset"></h2>
+<div id="future-and-current-workshops" class="section level3">
+<h3>Future and current workshops</h3>
+<ul>
+<li><p><strong>11 August 2026</strong>: <em>Introduction to Using R for
+Social Network Analysis</em>. 8th European Conference for Social
+Networks held at Linköping University. <a
+href="https://liu.se/en/event/eusn-2026">Register here!</a><br> Taught
+by Tomáš Diviák, James Hollway, Robert W. Krause, Filip
+Agneessens<br></p></li>
+<li><p><strong>11 August 2026</strong>: <em>Introduction to Using R for
+Social Network Analysis</em>. 8th European Conference for Social
+Networks held at Linköping University. <a
+href="https://liu.se/en/event/eusn-2026">Register here!</a><br> Taught
+by Tomáš Diviák, James Hollway, Robert W. Krause, Filip
+Agneessens<br></p></li>
+<li><p><strong>Since 2025</strong>: Introductory online workshop
+<em>Longitudinal Social Network Analysis</em> on instats.org. On-demand
+online introduction to the Stochastic Actor-oriented Model and the
+<strong>RSiena package</strong> with 18 recorded sessions of 45 minutes
+each. <a
+href="https://instats.org/seminar/longitudinal-social-network-analysis">Join
+here!</a><br> Taught by Tom Snijders.</p></li>
+</ul>
+<hr />
+</div>
+<div id="past-workshops" class="section level3">
+<h3>Past workshops</h3>
+<ul>
+<li><p><em>Winter School on Longitudinal Social Network Analysis and
+Advanced</em> <strong><em>RSiena</em></strong> <em>Users’ Meeting</em>
+(latest edition hosted at the University of Groningen). Taught by
+Christian Steglich and Tom Snijders.</p></li>
+<li><p><em>The analysis of longitudinal social network data using</em>
+<strong><em>RSiena</em></strong> (latest workshops during the Sunbelt
+conference and European Conference for Social Networks). Taught by
+Viviana Amati and Marion Hoffman (previously by Tom Snijders, Christian
+Steglich, Robert Krause, Per Block, Kieran Mepham).</p></li>
+<li><p><em>Advanced</em> <strong><em>RSiena</em></strong>
+<em>workshop</em> (latest workshops during the Sunbelt conference and
+European Conference for Social Networks) . Taught by Tom
+Snijders.</p></li>
+<li><p><em>Analyzing the dynamics of networks and continuous behavior
+with</em> <strong><em>RSiena</em></strong> (latest workshops during the
+Sunbelt conference and European Conference for Social Networks). Taught
+by Nynke Niezink.</p></li>
+<li><p><em>Creating New Effects in</em> <strong><em>RSiena</em></strong>
+(latest workshop during the Sunbelt conference). Taught by Nynke Niezink
+(previously by Tom Snijders).</p></li>
+<li><p><em>Handling Missing Network Data</em> (latest workshops during
+the Sunbelt conference and European Conference for Social Networks) .
+Taught by Robert Krause using <strong>Rsiena</strong>.</p></li>
+<li><p><em>Introduction to inference with networks in R</em> (latest
+workshops during the Sunbelt conference). Taught by Robert Krause, James
+Hollway, Tomas Diviak, and Filip Agneesens using
+<strong>migraph</strong>.</p></li>
+<li><p><em>Multimodal network analysis</em> (latest workshops during the
+Sunbelt conference and European Conference for Social Networks). Taught
+by James Hollway using <strong>migraph</strong>.</p></li>
+<li><p><em>Introduction to social networks</em> (latest workshop during
+the European Consortium for Political Research). Taught by James Hollway
+using <strong>manynet</strong></p></li>
+<li><p><em>Diffusion on networks</em> (latest workshops during the
+Sunbelt conference and European Conference for Social Networks). Taught
+by James Hollway using <strong>manynet</strong>.</p></li>
+<li><p><em>Modeling Relational Events in R Using</em>
+<strong><em>goldfish</em></strong> (latest workshops during the Sunbelt
+conference and European Conference for Social Networks). Taught by
+Alvaro Uzaheta, Maria Eugenia Gil-Pallares, Christoph Stadtfeld, Marion
+Hoffman, and James Hollway.</p></li>
+<li><p><strong><em>MoNAN</em></strong> <em>workshop</em> (latest edition
+at the University of Zurich). Taught by Per Block.</p></li>
+</ul>
+<hr />
+</div>
+</div>
+<div id="section-1" class="section level2">
+<h2></h2>
+<p style="font-size:1.5em">
+Executive education
+</p>
+<p>The Stocnet team offers educational opportunities to advance the
+knowledge of your workforce. We have experience with professional
+training in social network analysis and can work with you to develop an
+empowering program that meets your organization’s needs. Our program can
+equip you with cutting-edge tools and insights to map, analyze, and
+leverage social networks for impactful decision-making. We can also
+teach you about the latest analytical tools and techniques in network
+analysis, as developed within our team and beyond.</p>
+<p>If you are interested to learn more, please contact <a
+href="mailto:nniezink@andrew.cmu.edu"
+class="email">nniezink@andrew.cmu.edu</a>.</p>
+<p><br><br></p>
+<div class="logo-bottom-bg">
+<p><img src="img/logo-bottom.png" alt="logo"></p>
+</div>
+<script>
+$(function() {
+    // put the stocnet logo on the left of the nav bar
+    $('.navbar-brand').html('<img src="img/logo-name-white.png" alt="stocnet logo" style="height: 45px; margin-right: 10px;margin-top: -10px">');
+    });
+</script>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
