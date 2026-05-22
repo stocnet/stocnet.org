@@ -1,2 +1,3 @@
 # stocnet.github.io
-STOCNET website
+Repo hosting the static STOCNET website
+Redirect to stocnet.org
