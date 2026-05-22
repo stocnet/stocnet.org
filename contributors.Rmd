@@ -1,0 +1,158 @@
+---
+title: ""
+output: html_document
+---
+
+
+<br><br><br>
+
+<p style="font-size:1.5em">Stocnet development team</p>
+
+<!--html_preserve-->
+<div class="contributors-grid">
+
+  <div class="contributor-card">
+    <img src="img/tom2.png" alt="Tom Snijders" style="height:130px;margin: 10px 10px 10px 10px;border: 8px solid #fff;">
+    <div style="font-size:1.2em;color:#215CAF;font-weight:bold;">Tom Snijders</div>
+    <div>Founder of <strong>RSiena</strong></div>
+    <a href="https://www.stats.ox.ac.uk/~snijders/">Personal website</a>
+  </div>
+  
+  <div class="contributor-card">
+    <img src="img/christian2.png" alt="Christian Steglich" style="height:130px;margin: 10px 10px 10px 10px;border: 8px solid #fff;">
+    <div style="font-size:1.2em;color:#215CAF;font-weight:bold;">Christian Steglich</div>
+    <div>Maintainer of <strong>RSiena</strong>, contributor to <strong>manynet</strong></div>
+    <a href="https://steglich.gmw.rug.nl/sites/main.htm">Personal website</a>
+  </div>  
+  
+  <div class="contributor-card">
+    <img src="img/johan2.png" alt="Johan Koskinen" style="height:130px;margin: 10px 10px 10px 10px;border: 8px solid #fff;">
+    <div style="font-size:1.2em;color:#215CAF;font-weight:bold;">Johan Koskinen</div>
+    <div>Contributor to <strong>RSiena</strong></div>
+    <a href="https://www.su.se/english/profiles/kosk-1.615440">Personal website</a>
+  </div>  
+  
+  <div class="contributor-card">
+    <img src="img/christoph2.png" alt="Christoph Stadtfeld" style="height:130px;margin: 10px 10px 10px 10px;border: 8px solid #fff;">
+    <div style="font-size:1.2em;color:#215CAF;font-weight:bold;">Christoph Stadtfeld</div>
+    <div>Founder of <strong>goldfish</strong>, contributor to <strong>RSiena</strong></div>
+    <a href="https://gess.ethz.ch/das-departement/personen/person-detail.MjEwNzM4.TGlzdC81MTMsNjE4MTIwODY=.html">Personal website</a>
+  </div>
+
+  <div class="contributor-card">
+    <img src="img/per2.png" alt="Per Block" style="height:130px;margin: 10px 10px 10px 10px;border: 8px solid #fff;">
+    <div style="font-size:1.2em;color:#215CAF;font-weight:bold;">Per Block</div>
+    <div>Founder and maintainer of <strong>MoNAN</strong>, contributor to <strong>goldfish</strong>, <strong>RSiena</strong></div>
+    <a href="https://www.suz.uzh.ch/en/institute/aboutus/professors/block.html">Personal website</a>
+  </div>
+  
+  <div class="contributor-card">
+    <img src="img/james2.png" alt="James Hollway" style="height:130px;margin: 10px 10px 10px 10px;border: 8px solid #fff;">
+    <div style="font-size:1.2em;color:#215CAF;font-weight:bold;">James Hollway</div>
+    <div>Founder and maintainer of <strong>manynet</strong>, <strong>migraph</strong>, <strong>autograph</strong>, contributor to <strong>goldfish</strong>, <strong>RSiena</strong></strong></div>
+    <a href="https://jameshollway.com">Personal website</a>
+  </div>  
+  
+  <div class="contributor-card">
+    <img src="img/nynke2.png" alt="Nynke Niezink" style="height:130px;margin: 10px 10px 10px 10px;border: 8px solid #fff;">
+    <div style="font-size:1.2em;color:#215CAF;font-weight:bold;">Nynke Niezink</div>
+    <div>Contributor to <strong>RSiena</strong></div>
+    <a href="https://scholars.cmu.edu/8321-nynke-niezink">Personal website</a>
+  </div>
+
+  <div class="contributor-card">
+    <img src="img/robert2.png" alt="Robert Krause" style="height:130px;margin: 10px 10px 10px 10px;border: 8px solid #fff;">
+    <div style="font-size:1.2em;color:#215CAF;font-weight:bold;">Robert Krause</div>
+    <div>Contributor to <strong>RSiena</strong></div>
+    <a href="https://gatton.uky.edu/people/robert-krause">Personal website</a>
+  </div>  
+  
+  <div class="contributor-card">
+    <img src="img/marion2.png" alt="Marion Hoffman" style="height:130px;margin: 10px 10px 10px 10px;border: 8px solid #fff;">
+    <div style="font-size:1.2em;color:#215CAF;font-weight:bold;">Marion Hoffman</div>
+    <div>Founder and maintainer of <strong>ERPM</strong>, contributor to <strong>goldfish</strong>, <strong>MoNAN</strong></div>
+    <a href="https://marion-hoffman.github.io/">Personal website</a>
+  </div>
+  
+  <div class="contributor-card">
+    <img src="img/alvaro2.png" alt="Alvaro Uzaheta" style="height:130px;margin: 10px 10px 10px 10px;border: 8px solid #fff;">
+    <div style="font-size:1.2em;color:#215CAF;font-weight:bold;">Alvaro Uzaheta</div>
+    <div>Maintainer of <strong>goldfish</strong>, contributor to <strong>RSiena</strong></div>
+    <a href="https://gess.ethz.ch/en/the-department/people/person-detail.MjU0NTgy.TGlzdC81MTIsNjE4MTIwODY=.html">Personal website</a>
+  </div>
+</div>
+<!--/html_preserve-->
+
+<br><br>
+
+<style>
+  .contributors-page p { margin: 6px 0; }
+  .contributors-page p.section-title { margin: 0 0 12px 0; }
+  @media (max-width: 600px) { .contributors-page p { margin: 5px 0; } }
+</style>
+
+
+<p class="section-title" style="font-size:1.5em">Contributors</p>
+
+Alexandra Amani [<strong>ERPM</strong>]
+
+Viviana Amati [<strong>RSiena</strong>]
+
+Bernhard Bieri [<strong>migraph</strong>]
+
+Krists Boitmanis [<strong>RSiena</strong>]
+
+Timon Elmer [<strong>goldfish</strong>]
+
+Emily Garvin [<strong>goldfish</strong>]
+
+María Gil Pallares [<strong>goldfish</strong>]
+
+Charlotte Greenan [<strong>RSiena</strong>]
+
+Robert Hellpap [<strong>RSiena</strong>]
+
+Mark Huisman [<strong>RSiena</strong>]
+
+Nico Keiser [<strong>MoNAn</strong>,<strong>ERPM</strong>]
+
+Josh Lospinoso [<strong>RSiena</strong>]
+
+Kieran Mepham [<strong>goldfish</strong>]
+
+Mark Ortmann [<strong>RSiena</strong>]
+
+Weigutian Ou [<strong>goldfish</strong>]
+
+Mirko Reul [<strong>goldfish</strong>]
+
+Ruth Ripley [<strong>RSiena</strong>]
+
+Felix Schoenenberger [<strong>RSiena</strong>]
+
+Michael Schweinberger [<strong>RSiena</strong>]
+
+Henrique Sposito [<strong>autograph</strong>,<strong>manynet</strong>,<strong>migraph</strong>]
+
+Jael Tan [<strong>migraph</strong>]
+
+Steffen Triebel [<strong>RSiena</strong>]
+
+Mabel Wylie [<strong>goldfish</strong>]
+
+Siwei Zhang [<strong>goldfish</strong>]
+
+Xiaolei Zhang [<strong>goldfish</strong>]
+
+<br><br>
+
+<p class="section-title" style="font-size:1.5em">Website</p>
+
+We also thank Marijn Keijzer for his help in creating this website.
+
+```{js,echo=F}
+$(function() {
+	// put the stocnet logo on the left of the nav bar
+	$('.navbar-brand').html('<img src="img/logo-name-white.png" alt="stocnet logo" style="height: 45px; margin-right: 10px;margin-top: -10px">');
+	});
+```
